@@ -56,7 +56,7 @@ typedef struct tiro {
 typedef struct celula {
     Tipo tipo;
     union {
-        Nave *nave;
+        Nave nave;
         Tiro *tiro;
         Defesa *defesa;
         } elemento;

@@ -13,6 +13,7 @@ void cria_tela();
 void imprimi_tela();
 void atualiza_tela(Linha* cenario);
 void remove_linha(Linha* cenario);
+void update_tela();
 
 #endif
 

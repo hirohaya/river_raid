@@ -3,7 +3,7 @@
 
 #include "cenario.h"
 
-static Linha linha[T_ALT];
+extern Linha *linha;
 
 /* Cria uma linha, que representara (em primeiro momento) a primeira
  * linha de pixels */
@@ -11,10 +11,13 @@ void cria_tela(){
 	
 	int i;
 	int j;
+	Linha *nova;
+
+	nova = malloc(sizeof(Linha));
 	
 	srand(SEMENTE);
 
-	linha[0].margem_e = i_rand(MIN_MARGEM, MAX_MARGEM);
+	linha[0]margem_e = i_rand(MIN_MARGEM, MAX_MARGEM);
 	linha[0].margem_d = i_rand(T_LARG - MAX_MARGEM, T_LARG);
 
 	for(i = 1; i < T_ALT; i++){ 
@@ -49,14 +52,26 @@ void imprimi_tela(){
 	int i;
 	int j;
 
-	for(i = 0; i < T_ALT; i++){
-		for(j = 0; j < T_LARG; j++){
+	for(i = T_ALT-1; i >= 0; i--){
+		for(j = T_LARG; j >= 0; j--){
 			if(linha[i].linha[j].tipo == SOLIDO)
 				printf("|");
 			if(linha[i].linha[j].tipo == CORREDOR)
 				printf(".");
+			if(linha[i].linha[j].tipo == NAVE)
+				printf("^");
 		}
 		puts("");
 	}
 }
 
+
+
+void update_tela(){
+
+	int i;
+	int j;
+
+	for(i = T_ALT; i > 0; i--){
+		for(j = T_LARG; j >= 0; j--){
+			linha[i].linha[j].tipo = linha[i-1].linha[j].tipo;

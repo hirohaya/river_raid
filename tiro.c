@@ -6,9 +6,9 @@ Tiro *cria_tiro(Celula *celula){
     
     /* O tiro parte de uma nave*/
     if(celula->tipo == 1){
-        tiro->posicao_h = celula->elemento.nave->posicao_h;
+       /* tiro->posicao_h = celula->elemento.nave->posicao_h;
         tiro->posicao_v = celula->elemento.nave->posicao_v;
-        tiro->posicao_c = celula->elemento.nave->posicao_c;
+        tiro->posicao_c = celula->elemento.nave->posicao_c;*/
         /* Será definido quando a dinâmica do jogo for implementada */
         tiro->orientacao_h = 0;
         tiro->orientacao_v = 0;
