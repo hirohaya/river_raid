@@ -1,0 +1,3 @@
+ TIMESTEP
+
+    Podemos usar a função usleep(), meu teste deu um tempinho bacana
