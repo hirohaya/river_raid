@@ -1,15 +1,18 @@
 #ifndef H_CENARIO
 #define H_CENARIO
 
-
-#include "fila.h"
 #include "aleatorio.h"
 #include "nave.h"
 #include "defesa.h"
 #include "tiro.h"
 
-Linha *cria_linha(int tam_linha, int semente, int max_margem, int min_margem);
-void atualiza_linha(Linha* cenario);
+#define SEMENTE 424242
+
+
+void cria_tela();
+void imprimi_tela();
+void atualiza_tela(Linha* cenario);
 void remove_linha(Linha* cenario);
 
 #endif
+
