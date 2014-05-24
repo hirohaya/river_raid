@@ -5,15 +5,17 @@
 #include "nave.h"
 #include "defesa.h"
 #include "tiro.h"
+#include "fila.h"
 
-#define SEMENTE 424242
 
 
 void cria_tela();
-void imprimi_tela();
+void imprime_tela();
 void atualiza_tela(Linha* cenario);
 void remove_linha(Linha* cenario);
 void update_tela();
+void cria_linha(int margem_e, int margem_d);
+
 
 #endif
 
