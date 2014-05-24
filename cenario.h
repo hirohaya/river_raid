@@ -15,7 +15,3 @@ void atualiza_tela(Linha* cenario);
 void remove_linha(Linha* cenario);
 void update_tela();
 void cria_linha(int margem_e, int margem_d);
-
-
-#endif
-
