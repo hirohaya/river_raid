@@ -1,7 +1,7 @@
 CC=gcc
-CFLAGS=-c -ansi -pedantic -O2 -Wall
+CFLAGS=-c -ansi -pedantic -O2 -Wall -g
 LDFLAGS=
-SOURCES= main.c tiro.c cenario.c nave.c defesa.c aleatorio.c game.c
+SOURCES= main.c tiro.c cenario.c nave.c defesa.c aleatorio.c game.c fila.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=river_raid
 
