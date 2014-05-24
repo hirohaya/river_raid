@@ -8,19 +8,18 @@ Defesa *cria_defesa(int p_h, int p_v, int p_c){
     torre->dano = 1;
     /* Fará parte da dinâmica */
     torre->frequencia_atq = 0;
-    torre->vel_atq = 1;
-    torre->posicao_h = p_h;
-    torre->posicao_v = p_v;
-    torre->posicao_c = p_c;
+    torre->p_x = p_h;
+    torre->p_y = p_v;
+    torre->p_z = p_c;
 
     return torre;
 }
 
 void atualiza_defesa(Defesa *torre, int p_h, int p_v, int p_c){
   
-    torre->posicao_h = p_h;
-    torre->posicao_v = p_v;
-    torre->posicao_c = p_c;
+    torre->p_x = p_h;
+    torre->p_y = p_v;
+    torre->p_z = p_c;
 }
 
 

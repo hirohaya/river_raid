@@ -10,24 +10,22 @@ Tiro *cria_tiro(Celula *celula){
         tiro->posicao_v = celula->elemento.nave->posicao_v;
         tiro->posicao_c = celula->elemento.nave->posicao_c;*/
         /* Será definido quando a dinâmica do jogo for implementada */
-        tiro->orientacao_h = 0;
-        tiro->orientacao_v = 0;
-        tiro->orientacao_c = 0;
-
-        tiro->velocidade = 1;
+       
+	tiro->v_x = 1;
+	tiro->v_y = 1;
         tiro->dano_atk = 1;
     }
+
     /* O tiro parte de um elemento de defesa*/
     if(celula->tipo == 3){
-        tiro->posicao_h = celula->elemento.defesa->posicao_h;
-        tiro->posicao_v = celula->elemento.defesa->posicao_v;
-        tiro->posicao_c = celula->elemento.defesa->posicao_c;
-        /* Será definido quando a dinâmica do jogo for implementada */
-        tiro->orientacao_h = 0;
-        tiro->orientacao_v = 0;
-        tiro->orientacao_c = 0;
+        tiro->p_x = celula->elemento.defesa->p_x;
+        tiro->p_y = celula->elemento.defesa->p_y;
 
-        tiro->velocidade = 1;
+        tiro->p_z = celula->elemento.defesa->p_z;
+        /* Será definido quando a dinâmica do jogo for implementada */
+
+        tiro->v_x = 1;
+	tiro->v_y = 1;
         tiro->dano_atk = 1;
     }
 
@@ -36,9 +34,9 @@ Tiro *cria_tiro(Celula *celula){
 
 /* Atualiza a posição do tiro de acordo com a orientação dele */
 void atualiza_tiro(Tiro *tiro, int o_v, int o_h, int o_c){
-    tiro->posicao_h += o_v;
-    tiro->posicao_v += o_h;
-    tiro->posicao_c += o_c;
+    tiro->p_x += o_v;
+    tiro->p_y += o_h;
+    tiro->p_z += o_c;
 }
 
 void remove_tiro(Tiro *tiro){
