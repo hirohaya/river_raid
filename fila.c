@@ -1,29 +1,42 @@
-#include <stdlib.h>
-
 #include "fila.h"
 
-/* Inicia a fila com cabceça. */
-Linha *cria_fila(){
-	Linha *cabeca = malloc(sizeof(Linha));
-	cabeca->ant = cabeca->prox = NULL;
-	return cabeca;
+
+
+Fila *fila;
+
+
+void fila_init(){
+
+	fila = malloc(sizeof(Fila));
+	fila->ini = NULL;
+	fila->fim = NULL;
+
 }
 
-/* Insere depois da cabeça */
-void insere_linha(Linha *cabeca, Linha *nova){
-    nova->prox = cabeca->prox;
-    nova->ant = cabeca;
-    cabeca->prox->ant = nova;
-    cabeca->prox = nova;
+
+
+void insere_fila(Linha *linha){
+
+	/*Em caso de fila vazia*/
+	if(fila->ini == NULL && fila->fim == NULL){
+		fila->ini = linha;
+		fila->fim = linha;
+	}
+
+	else{
+		linha->prox = fila->fim;
+		(fila->fim)->ant = linha;
+		fila->fim = linha;
+	}
+
 }
 
-/* Remove o primeiro elemento que entrou na fila*/
-void remove_linha(Linha *cabeca){
-    Linha *aux;
 
-    for(aux = cabeca->prox; aux->prox != NULL; aux = aux->prox);
-    aux->ant->prox = aux->prox;
-    free(aux->linha);
-    free(aux);
+
+void remove_fila(){
+
+	fila->ini = (fila->ini)->ant;
+	free((fila->ini)->prox);
+
 }
 
