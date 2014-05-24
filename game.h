@@ -5,8 +5,9 @@
 #include <stdlib.h>
 
 #include "cenario.h"
-
-
+#include "fila.h"
+#include "aleatorio.h"
+#include "elementos.h"
 
 void game_init();
 void insere_objs();
